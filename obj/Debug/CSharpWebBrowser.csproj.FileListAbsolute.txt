@@ -1,0 +1,9 @@
+\\psf\home\documents\visual studio 2015\Projects\CSharpWebBrowser\CSharpWebBrowser\bin\Debug\CSharpWebBrowser.exe.config
+\\psf\home\documents\visual studio 2015\Projects\CSharpWebBrowser\CSharpWebBrowser\bin\Debug\CSharpWebBrowser.exe
+\\psf\home\documents\visual studio 2015\Projects\CSharpWebBrowser\CSharpWebBrowser\bin\Debug\CSharpWebBrowser.pdb
+\\psf\home\documents\visual studio 2015\Projects\CSharpWebBrowser\CSharpWebBrowser\obj\Debug\CSharpWebBrowser.csprojResolveAssemblyReference.cache
+\\psf\home\documents\visual studio 2015\Projects\CSharpWebBrowser\CSharpWebBrowser\obj\Debug\CSharpWebBrowser.Properties.Resources.resources
+\\psf\home\documents\visual studio 2015\Projects\CSharpWebBrowser\CSharpWebBrowser\obj\Debug\CSharpWebBrowser.csproj.GenerateResource.Cache
+\\psf\home\documents\visual studio 2015\Projects\CSharpWebBrowser\CSharpWebBrowser\obj\Debug\CSharpWebBrowser.exe
+\\psf\home\documents\visual studio 2015\Projects\CSharpWebBrowser\CSharpWebBrowser\obj\Debug\CSharpWebBrowser.pdb
+\\psf\home\documents\visual studio 2015\Projects\CSharpWebBrowser\CSharpWebBrowser\obj\Debug\CSharpWebBrowser.CSBrowser.resources
