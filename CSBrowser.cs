@@ -1,10 +1,14 @@
 ﻿using System;
+using System.Drawing;
+using System.Linq;
 using System.Windows.Forms;
 
 namespace CSharpWebBrowser
 {
     public partial class CSBrowser : Form
     {
+        private string[] _domains = {".com", ".co.uk", ".org", ".org.uk"};
+
         public CSBrowser()
         {
             InitializeComponent();
@@ -36,16 +40,24 @@ namespace CSharpWebBrowser
 
         /// <summary>
         /// Navigates to Page in addressbar.
-        /// Disables Go button and Address bar once Navigation is done.
+        /// Disables Go button and Address bar once navigation is done.
         /// </summary>
         private void NavigateToPage()
         {
             btnGo.Enabled = false;
             txtAddressBar.Enabled = false;
-            toolStripStatusLabel1.Text = "Navigating to " + txtAddressBar.Text;
+
+            // If the address doesn't end with one of the possible domains, search. TODO: Add changeable search provider
+            string url;
+
+            if (_domains.Any(dom => txtAddressBar.Text.EndsWith(dom)))
+                url = "http://" + txtAddressBar.Text;
+            else
+                url  = "https://www.google.co.uk/search?q=" + txtAddressBar.Text;
             
-        
-            webBrowser.Navigate(txtAddressBar.Text);
+            webBrowser.Navigate(url);
+            toolStripStatusLabel1.Text = "Navigating to " + url;
+
         }
 
         /// <summary>
@@ -66,7 +78,15 @@ namespace CSharpWebBrowser
             if (e.CurrentProgress > 0 && e.MaximumProgress > 0)
             {
                 toolStripProgressBar1.ProgressBar.Value = (int)(e.CurrentProgress * 100 / e.MaximumProgress);
-            }           
+            }
+
+            if (toolStripProgressBar1.ProgressBar.Value == 100) toolStripProgressBar1.ProgressBar.Value = 0;
+        }
+
+        private void txtAddressBar_Enter(object sender, EventArgs e)
+        {
+            txtAddressBar.ForeColor = Color.Black;
+            txtAddressBar.Text = "";
         }
     }
 }
